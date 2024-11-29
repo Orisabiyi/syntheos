@@ -1,1 +1,7 @@
-export default function Profile() {}
+export default function Profile() {
+  return (
+    <div>
+      Profile
+    </div>
+  )
+}

@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import Analyze from "./pages/Analyze";
 import Profile from "./pages/Profile";
 import History from "./pages/History";
+import Analyzer from "./pages/Analyzer";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
           <Route path="analyze" element={<Analyze />} />
           <Route path="profile" element={<Profile />} />
           <Route path="history" element={<History />} />
+          <Route path="analyzer" element={<Analyzer />} />
         </Route>
       </Routes>
     </BrowserRouter>
