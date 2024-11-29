@@ -2,13 +2,13 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBdpUiNUOlmTX3XsIp3BH9h_qHivxumxV0",
-  authDomain: "syntheos-c76fa.firebaseapp.com",
-  projectId: "syntheos-c76fa",
-  storageBucket: "syntheos-c76fa.firebasestorage.app",
-  messagingSenderId: "666874661819",
-  appId: "1:666874661819:web:52e066000880ef2194d29e",
-  measurementId: "G-S78FRS44MX",
+  apiKey: import.meta.env.apiKey,
+  authDomain: import.meta.env.authDomain,
+  projectId: import.meta.env.projectId,
+  storageBucket: import.meta.env.storageBucket,
+  messagingSenderId: import.meta.env.messagingSenderId,
+  appId: import.meta.env.appId,
+  measurementId: import.meta.env.measurementId,
 };
 
 // Initialize Firebase
