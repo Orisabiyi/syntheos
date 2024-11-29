@@ -5,10 +5,14 @@ export default function Auth() {
         <h1>Syntheos</h1>
       </nav>
 
-      <section>
+      <section className="flex flex-col items-center justify-center">
         <figure></figure>
-        <button>Sign in/Sign up with Google</button>
-        <button>Sign in/Sign up X</button>
+
+        <div className="flex flex-col items-center justify-center">
+          <h1>Welcome to Syntheos</h1>
+          <button>Sign in/Sign up with Google</button>
+          <button>Sign in/Sign up X</button>
+        </div>
       </section>
     </main>
   );
