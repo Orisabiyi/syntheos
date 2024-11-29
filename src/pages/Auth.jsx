@@ -37,7 +37,7 @@ export default function Auth() {
       <section className="flex flex-col items-center justify-center flex-1">
         <figure></figure>
 
-        <div className="flex flex-col items-center justify-center gap-4">
+        <div className="flex flex-col items-center justify-center gap-8">
           <h1 className="text-32 font-semibold">Welcome to Syntheos</h1>
 
           <button
