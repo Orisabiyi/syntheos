@@ -1,3 +1,5 @@
+import handleGoogleAuth from "../firebase/GoogleAuth";
+
 export default function Auth() {
   return (
     <main className="min-h-screen flex flex-col bg-lemon-default">
@@ -11,7 +13,10 @@ export default function Auth() {
         <div className="flex flex-col items-center justify-center gap-4">
           <h1 className="text-32 font-semibold">Welcome to Syntheos</h1>
 
-          <button className="bg-lemon-dark text-16 px-8 py-4 w-72 rounded-xl">
+          <button
+            className="bg-lemon-dark text-16 px-8 py-4 w-72 rounded-xl"
+            onClick={handleGoogleAuth}
+          >
             Join with Google
           </button>
 
