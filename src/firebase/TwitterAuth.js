@@ -11,6 +11,6 @@ export async function handleTwitterAuth() {
     const user = result.user;
     return { user, credential };
   } catch (error) {
-    console.log(error.message);
+    return { error: error.message };
   }
 }
