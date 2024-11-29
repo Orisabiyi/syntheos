@@ -1,6 +1,21 @@
+import { useNavigate } from "react-router-dom";
 import { handleGoogleAuth } from "../firebase/GoogleAuth";
 
 export default function Auth() {
+  const navigate = useNavigate();
+
+  const handleAuth = async function () {
+    try {
+      const value = await handleGoogleAuth();
+      if (value?.user) {
+        console.log(value.user);
+        navigate("/dashboard");
+      }
+    } catch (error) {
+      console.error("Authentication failed:", error);
+    }
+  };
+
   return (
     <main className="min-h-screen flex flex-col bg-lemon-default">
       <nav>
@@ -15,7 +30,7 @@ export default function Auth() {
 
           <button
             className="bg-lemon-dark text-16 px-8 py-4 w-72 rounded-xl"
-            onClick={handleGoogleAuth}
+            onClick={handleAuth}
           >
             Join with Google
           </button>

@@ -6,30 +6,18 @@ import {
 } from "firebase/auth";
 import { app } from "./firebaseConfig";
 
-export function handleGoogleAuth() {
+export async function handleGoogleAuth() {
   const provider = new GoogleAuthProvider();
-
   const auth = getAuth(app);
 
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      const user = result.user;
-      console.log({ user, token });
-      return { user, token };
-    })
-    .catch((error) => {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // The email of the user's account used.
-      const email = error.customData.email;
-      // The AuthCredential type that was used.
-      const credential = GoogleAuthProvider.credentialFromError(error);
-      console.log({ errorCode, errorMessage, email, credential });
-      return { errorCode, errorMessage, email, credential };
-    });
+  try {
+    const result = await signInWithPopup(auth, provider);
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const user = result.user;
+    return { user, credential };
+  } catch (error) {
+    console.log(error.message);
+  }
 }
 
 export function handleGoogleLogout() {
