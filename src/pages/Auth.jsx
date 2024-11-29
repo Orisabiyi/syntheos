@@ -8,7 +8,6 @@ export default function Auth() {
     try {
       const value = await handleGoogleAuth();
       if (value?.user) {
-        console.log(value.user);
         navigate("/dashboard");
       }
     } catch (error) {
@@ -18,8 +17,8 @@ export default function Auth() {
 
   return (
     <main className="min-h-screen flex flex-col bg-lemon-default">
-      <nav>
-        <h1>Syntheos</h1>
+      <nav className="p-8">
+        <h1 className="text-32 font-semibold">Syntheos</h1>
       </nav>
 
       <section className="flex flex-col items-center justify-center flex-1">
