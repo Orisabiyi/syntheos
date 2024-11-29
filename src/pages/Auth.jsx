@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { handleGoogleAuth } from "../firebase/GoogleAuth";
+import { handleTwitterAuth } from "../firebase/TwitterAuth";
 
 export default function Auth() {
   const navigate = useNavigate();
@@ -7,6 +8,18 @@ export default function Auth() {
   const handleAuth = async function () {
     try {
       const value = await handleGoogleAuth();
+      if (value?.user) {
+        navigate("/dashboard");
+      }
+    } catch (error) {
+      console.error("Authentication failed:", error);
+    }
+  };
+
+  const handleTwitter = async function () {
+    try {
+      const value = await handleTwitterAuth();
+
       if (value?.user) {
         navigate("/dashboard");
       }
@@ -34,7 +47,10 @@ export default function Auth() {
             Join with Google
           </button>
 
-          <button className="bg-lemon-dark text-16 px-8 py-4 w-72 rounded-xl">
+          <button
+            className="bg-lemon-dark text-16 px-8 py-4 w-72 rounded-xl"
+            onClick={handleTwitter}
+          >
             Join with X
           </button>
         </div>
