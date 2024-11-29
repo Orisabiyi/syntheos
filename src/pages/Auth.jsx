@@ -30,7 +30,7 @@ export default function Auth() {
 
   return (
     <main className="min-h-screen flex flex-col bg-lemon-default">
-      <nav className="p-8">
+      <nav className="px-16 py-8">
         <h1 className="text-32 font-semibold">Syntheos</h1>
       </nav>
 
@@ -41,14 +41,14 @@ export default function Auth() {
           <h1 className="text-32 font-semibold">Welcome to Syntheos</h1>
 
           <button
-            className="bg-lemon-dark text-16 px-8 py-4 w-72 rounded-xl"
+            className="bg-lemon-dark text-16 px-8 py-4 w-72 rounded-xl cursor-pointer"
             onClick={handleAuth}
           >
             Join with Google
           </button>
 
           <button
-            className="bg-lemon-dark text-16 px-8 py-4 w-72 rounded-xl"
+            className="bg-lemon-dark text-16 px-8 py-4 w-72 rounded-xl cursor-pointer"
             onClick={handleTwitter}
           >
             Join with X
