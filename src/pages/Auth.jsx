@@ -1,4 +1,4 @@
-import handleGoogleAuth from "../firebase/GoogleAuth";
+import { handleGoogleAuth } from "../firebase/GoogleAuth";
 
 export default function Auth() {
   return (

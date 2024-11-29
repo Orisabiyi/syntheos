@@ -1,7 +1,12 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut,
+} from "firebase/auth";
 import { app } from "./firebaseConfig";
 
-export default function handleGoogleAuth() {
+export function handleGoogleAuth() {
   const provider = new GoogleAuthProvider();
 
   const auth = getAuth(app);
@@ -24,5 +29,16 @@ export default function handleGoogleAuth() {
       const credential = GoogleAuthProvider.credentialFromError(error);
       console.log({ errorCode, errorMessage, email, credential });
       return { errorCode, errorMessage, email, credential };
+    });
+}
+
+export function handleGoogleLogout() {
+  const auth = getAuth(app);
+  signOut(auth)
+    .then(() => {
+      console.log("User signed out.");
+    })
+    .catch((error) => {
+      console.log("Error signing out:", error);
     });
 }
