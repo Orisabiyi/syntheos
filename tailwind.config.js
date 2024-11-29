@@ -19,6 +19,12 @@ export default {
         "text-56": "5.6rem",
         "text-60": "6rem",
       },
+      colors: {
+        lemon: {
+          default: "#e6f2d3",
+          dark: "#d3e6b5",
+        },
+      },
     },
   },
   plugins: [],
