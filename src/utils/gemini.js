@@ -39,7 +39,8 @@ export function optimizedRequest(content) {
       [hashtag 1], [hashtag 2], [hashtag 3]
 
       ## Recommended Post Format
-      [recommended post format] (twitter)
+      - [Recommended post format 1],
+      - [Recommended post format 2]
     `,
           },
         ],

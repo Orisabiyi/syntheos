@@ -8,3 +8,42 @@ html {
   font-size: 62.5%; /* 1rem = 10px */
 }
 
+.generated-content {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+
+.generated-content strong {
+  font-weight: 700;
+}
+
+.generated-content > h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.generated-content > ul {
+  font-weight: 500;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.generated-content > ul > li {
+  background-color: #d3e6b5;
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.generated-content > p {
+  /* background-color: #d3e6b5; */
+  padding: 4px;
+  margin-right: 10px;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
