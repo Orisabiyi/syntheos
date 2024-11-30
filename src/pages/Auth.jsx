@@ -10,6 +10,8 @@ export default function Auth() {
       const value = await handleGoogleAuth();
       if (value?.user) {
         navigate("/dashboard");
+        console.log(value.user.uid);
+        sessionStorage.setItem("userID", value.user.uid);
       }
     } catch (error) {
       console.error("Authentication failed:", error);
