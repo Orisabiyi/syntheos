@@ -72,7 +72,7 @@ export default function Analyzer() {
             disabled={isLoading}
           >
             <TbAnalyze />
-            <span>Analyze</span>
+            <span>{isLoading ? "Analyze" : "Analyzing..."}</span>
           </button>
         </form>
       )}
