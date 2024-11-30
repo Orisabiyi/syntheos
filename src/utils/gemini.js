@@ -25,7 +25,6 @@ export function optimizedRequest(content) {
     Post Content: ${content}
     
     Format the response in Markdown as follows:
-      \`\`\`
       ## Engagement Metrics
       - Likes: [predicted likes],
       - Shares: [predicted shares],
@@ -37,13 +36,10 @@ export function optimizedRequest(content) {
       - [suggested improvement 3]
 
       ## Hashtag Recommendations
-      - [hashtag 1],
-      - [hashtag 2],
-      - [hashtag 3]
+      [hashtag 1], [hashtag 2], [hashtag 3]
 
       ## Recommended Post Format
-      [recommended post format]
-      \`\`\`
+      [recommended post format] (twitter)
     `,
           },
         ],
