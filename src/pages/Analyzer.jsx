@@ -1,14 +1,15 @@
-import { useState } from "react";
-import { TbAnalyze } from "react-icons/tb";
 import Markdown from "react-markdown";
+import { useState, useEffect } from "react";
+import { TbAnalyze } from "react-icons/tb";
+import { handleSaveHistory } from "../firebase/firestore";
 import { optimizedRequest, placeholder, url } from "../utils/gemini";
-import { useEffect } from "react";
 
 export default function Analyzer() {
   const [messages, setMessages] = useState("");
   const [userInput, setUserInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [isSave, setIsSave] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -21,6 +22,25 @@ export default function Analyzer() {
   // Handle user input change
   const handleChange = function (e) {
     setUserInput(e.target.value);
+  };
+
+  const handleSave = async function () {
+    try {
+      const history = {
+        userID: sessionStorage.getItem("userID"),
+        content: userInput,
+        date: new Date().toISOString(),
+      };
+
+      const data = await handleSaveHistory(history);
+      console.log(data);
+
+      if (!data) throw new Error("There is an error finding data");
+      setIsSave(true);
+    } catch (error) {
+      console.log(error.message);
+      setIsSave(false);
+    }
   };
 
   // Analyze and fetch the AI response
@@ -100,9 +120,14 @@ export default function Analyzer() {
             <Markdown>{messages}</Markdown>
           </div>
 
-          <button className="bg-lemon-dark w-1/2 self-center py-4 px-8 rounded-xl text-18 font-medium">
-            Save to history
-          </button>
+          {!isSave && (
+            <button
+              className="bg-lemon-dark w-1/2 self-center py-4 px-8 rounded-xl text-18 font-medium"
+              onClick={handleSave}
+            >
+              {!isSave ? "Save to history" : "Saving..."}
+            </button>
+          )}
         </div>
       )}
     </section>
