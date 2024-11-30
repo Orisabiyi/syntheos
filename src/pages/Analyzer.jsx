@@ -27,6 +27,9 @@ export default function Analyzer() {
 
   const handleSave = async function () {
     try {
+      setError("");
+      setIsLoading(true);
+
       const history = {
         userID: sessionStorage.getItem("userID"),
         content: userInput,
@@ -40,8 +43,9 @@ export default function Analyzer() {
       if (!data) throw new Error("There is an error finding data");
       setIsSave(true);
     } catch (error) {
-      console.log(error.message);
-      setIsSave(false);
+      setError(`Error during request: ${error.message}`);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -84,8 +88,9 @@ export default function Analyzer() {
 
   return (
     <section
-      className={`min-h-screen flex flex-col items-center ${messages ? "justify-start" : "justify-center"
-        }`}
+      className={`min-h-screen flex flex-col items-center ${
+        messages ? "justify-start" : "justify-center"
+      }`}
     >
       {!messages && (
         <form
@@ -129,7 +134,7 @@ export default function Analyzer() {
               className="bg-lemon-dark w-1/4 self-center py-4 px-8 rounded-xl text-18 font-medium"
               onClick={handleSave}
             >
-              {!isSave ? "Save to history" : "Saving..."}
+              {isLoading ? "Saving..." : "Save to history"}
             </button>
           )}
         </div>
