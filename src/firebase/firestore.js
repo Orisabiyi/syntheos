@@ -18,3 +18,14 @@ export async function handleSaveHistory(history) {
   });
   return true;
 }
+
+export async function handleGetHistory() {
+  const docRef = doc(db, "history", sessionStorage.getItem("userID"));
+  const docSnap = await getDoc(docRef);
+
+  if (!docSnap.exists()) {
+    return [];
+  }
+
+  return docSnap.data().history;
+}
