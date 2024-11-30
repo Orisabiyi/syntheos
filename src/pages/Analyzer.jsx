@@ -2,14 +2,24 @@ import { useState } from "react";
 import { TbAnalyze } from "react-icons/tb";
 import Markdown from "react-markdown";
 import { optimizedRequest, placeholder, url } from "../utils/gemini";
+import { useEffect } from "react";
 
 export default function Analyzer() {
   const [messages, setMessages] = useState("");
   const [userInput, setUserInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setError("");
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [error]);
 
   // Handle user input change
-  const handleChange = (e) => {
+  const handleChange = function (e) {
     setUserInput(e.target.value);
   };
 
@@ -18,7 +28,13 @@ export default function Analyzer() {
     e.preventDefault();
     const requestBody = optimizedRequest(userInput);
 
+    if (userInput.length < 30)
+      return setError(
+        "Please enter some content to analyze. It is Less than expected"
+      );
+
     try {
+      setError("");
       setIsLoading(true);
 
       const response = await fetch(url, {
@@ -38,7 +54,7 @@ export default function Analyzer() {
       console.log(data.candidates[0].content.parts[0].text);
       setMessages(data.candidates[0].content.parts[0].text);
     } catch (error) {
-      console.error("Error during API request:", error);
+      setError(`Error during request: ${error.message}`);
     } finally {
       setIsLoading(false);
     }
@@ -52,12 +68,14 @@ export default function Analyzer() {
     >
       {!messages && (
         <form
-          className="relative flex flex-col justify-center items-center gap-5 w-full"
+          className="relative flex flex-col justify-center items-center gap-4 w-full"
           onSubmit={handleAnalyze}
         >
-          <h3 className="font-medium text-32 mb-5 text-center">
+          <h3 className="font-medium text-32 text-center">
             Analyze Post Content
           </h3>
+
+          {error && <p className="text-red-500 text-14 mb-4">{error}</p>}
 
           <textarea
             required
