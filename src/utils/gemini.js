@@ -22,7 +22,29 @@ export function optimizedRequest(content) {
     3. Hashtag recommendations.
     4. Recommended content for the post (twitter).
 
-    Post Content: ${content}`,
+    Post Content: ${content}
+    
+    Format the response in Markdown as follows:
+      \`\`\`
+      ## Engagement Metrics
+      - Likes: [predicted likes],
+      - Shares: [predicted shares],
+      - Comments: [predicted comments]
+
+      ## Suggested Improvements
+      - [suggested improvement 1],
+      - [suggested improvement 2],
+      - [suggested improvement 3]
+
+      ## Hashtag Recommendations
+      - [hashtag 1],
+      - [hashtag 2],
+      - [hashtag 3]
+
+      ## Recommended Post Format
+      [recommended post format]
+      \`\`\`
+    `,
           },
         ],
       },
