@@ -30,6 +30,7 @@ export default function Analyzer() {
       const history = {
         userID: sessionStorage.getItem("userID"),
         content: userInput,
+        messages,
         date: new Date().toISOString(),
       };
 
@@ -83,9 +84,8 @@ export default function Analyzer() {
 
   return (
     <section
-      className={`min-h-screen flex flex-col items-center ${
-        messages ? "justify-start" : "justify-center"
-      }`}
+      className={`min-h-screen flex flex-col items-center ${messages ? "justify-start" : "justify-center"
+        }`}
     >
       {!messages && (
         <form
