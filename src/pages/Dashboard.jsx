@@ -1,4 +1,4 @@
-import { Outlet, NavLink } from "react-router-dom"
+import { Outlet, NavLink } from "react-router-dom";
 
 export default function Dashboard() {
   return (
@@ -8,14 +8,17 @@ export default function Dashboard() {
           <div className="w-1/5 bg-lemon-dark flex flex-col py-12 px-10">
             <h1 className="text-28">Syntheos</h1>
             <nav className="text-18 h-full mt-40 gap-10 rounded-lg flex flex-col">
-              <NavLink to={'analyze'} className="py-2 border-b-[1.5px] border-b-black">
+              <NavLink
+                to={"analyze"}
+                className="py-2 border-b-[1.5px] border-b-black"
+              >
                 Analyze
               </NavLink>
-              <NavLink to={'history'} className="py-2 border-b-[1.5px] border-b-black">
+              <NavLink
+                to={"history"}
+                className="py-2 border-b-[1.5px] border-b-black"
+              >
                 History
-              </NavLink>
-              <NavLink to={'profile'} className="py-2 border-b-[1.5px] border-b-black">
-                Settings
               </NavLink>
             </nav>
           </div>
@@ -25,7 +28,6 @@ export default function Dashboard() {
           </div>
         </section>
       </section>
-
-    </main >
-  )
+    </main>
+  );
 }
