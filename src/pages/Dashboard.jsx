@@ -2,7 +2,7 @@ import { Outlet, NavLink } from "react-router-dom"
 
 export default function Dashboard() {
   return (
-    <main className="max-w-full mx-auto h-screen bg-lemon-default">
+    <main className="max-w-full mx-auto min-h-screen bg-lemon-default">
       <section className="w-full px-auto h-full">
         <section className="bg-lemon-dark flex flex-row gap-3 h-full">
           <div className="w-1/5 bg-lemon-dark flex flex-col py-12 px-10">

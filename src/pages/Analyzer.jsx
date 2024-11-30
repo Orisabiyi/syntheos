@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { TbAnalyze } from "react-icons/tb";
 import { handleSaveHistory } from "../firebase/firestore";
 import { optimizedRequest, placeholder, url } from "../utils/gemini";
+import chillguy from '../assets/chillguy.jpg'
 
 export default function Analyzer() {
   const [messages, setMessages] = useState("");
@@ -82,9 +83,8 @@ export default function Analyzer() {
 
   return (
     <section
-      className={`h-full flex flex-col items-center ${
-        messages ? "justify-start" : "justify-center"
-      }`}
+      className={`h-full flex flex-col items-center ${messages ? "justify-start" : "justify-center"
+        }`}
     >
       {!messages && (
         <form
@@ -115,14 +115,18 @@ export default function Analyzer() {
         </form>
       )}
       {messages && (
-        <div className="generated-content self-start flex flex-col items-center gap-8 w-full py-12">
-          <div>
+        <div className="self-start flex flex-col items-center gap-5 w-11/12 py-10 mx-auto">
+          <div className="w-60 h-60">
+            <img src={chillguy} alt="" className="rounded-2xl" />
+          </div>
+          <div className="generated-content">
             <Markdown>{messages}</Markdown>
           </div>
 
+
           {!isSave && (
             <button
-              className="bg-lemon-dark w-1/2 self-center py-4 px-8 rounded-xl text-18 font-medium"
+              className="bg-lemon-dark w-1/4 self-center py-4 px-8 rounded-xl text-18 font-medium"
               onClick={handleSave}
             >
               {!isSave ? "Save to history" : "Saving..."}
