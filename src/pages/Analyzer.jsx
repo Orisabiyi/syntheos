@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { TbAnalyze } from "react-icons/tb";
 import Markdown from "react-markdown";
-import { optimizedRequest, url } from "../utils/gemini";
+import { optimizedRequest, placeholder, url } from "../utils/gemini";
 
 export default function Analyzer() {
   const [messages, setMessages] = useState("");
@@ -62,7 +62,7 @@ export default function Analyzer() {
           <textarea
             required
             type="text"
-            placeholder="Check out our new blog post on improving social media engagement! #SocialMedia #Engagement #ContentCreation"
+            placeholder={placeholder}
             value={userInput}
             onChange={handleChange}
             className="h-96 w-3/4 mx-auto text-18 p-3 border-2 border-lemon-dark rounded-xl resize-none outline-none"
