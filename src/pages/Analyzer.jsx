@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { TbAnalyze } from "react-icons/tb";
 import { handleSaveHistory } from "../firebase/firestore";
 import { optimizedRequest, placeholder, url } from "../utils/gemini";
-import chillguy from '../assets/chillguy.jpg'
+import chillguy from "../assets/chillguy.jpg";
 
 export default function Analyzer() {
   const [messages, setMessages] = useState("");
@@ -83,8 +83,9 @@ export default function Analyzer() {
 
   return (
     <section
-      className={`h-full flex flex-col items-center ${messages ? "justify-start" : "justify-center"
-        }`}
+      className={`min-h-screen flex flex-col items-center ${
+        messages ? "justify-start" : "justify-center"
+      }`}
     >
       {!messages && (
         <form
@@ -122,7 +123,6 @@ export default function Analyzer() {
           <div className="generated-content">
             <Markdown>{messages}</Markdown>
           </div>
-
 
           {!isSave && (
             <button
