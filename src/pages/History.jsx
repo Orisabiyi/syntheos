@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom'
+import ReactMarkdown from "react-markdown";
 import { handleGetHistory } from "../firebase/firestore";
-import chill from '../assets/chillguy.jpg'
+import chill from "../assets/chillguy.jpg";
 
 export default function History() {
   const [value, setValue] = useState([]);
@@ -9,15 +10,15 @@ export default function History() {
   useEffect(function () {
     async function handleAnalyze() {
       try {
-        const res = await handleGetHistory()
+        const res = await handleGetHistory();
         console.log(res);
         setValue(res);
       } catch (error) {
-        console.log(error.message)
+        console.log(error.message);
       }
     }
-    handleAnalyze()
-  }, [])
+    handleAnalyze();
+  }, []);
 
   return (
     <div className="min-h-screen w-full">
@@ -29,21 +30,28 @@ export default function History() {
           <h1 className="text-20 font-medium text-center">
             Just take a chill pill and analyze a post
           </h1>
-          <Link to={"/dashboard/analyze"} className="text-18 font-medium bg-lemon-dark p-5 rounded-2xl">Analyze a post</Link>
+          <Link
+            to={"/dashboard/analyze"}
+            className="text-18 font-medium bg-lemon-dark p-5 rounded-2xl"
+          >
+            Analyze a post
+          </Link>
         </div>
       ) : (
         <div className="h-full w-full py-10 px-10 flex flex-col gap-5">
           <h1 className="text-20">History</h1>
           {value?.map((item, index) => (
-            <div key={index} className="flex flex-col gap-5 bg-lemon-dark p-5 rounded-2xl text-16">
+            <div
+              key={index}
+              className="flex flex-col gap-5 bg-lemon-dark p-5 rounded-2xl text-16"
+            >
               <span>{new Date(item.date).toDateString()}</span>
 
-              {item.content}
+              <ReactMarkdown>{item.content}</ReactMarkdown>
             </div>
           ))}
         </div>
       )}
-
     </div>
-  )
+  );
 }
