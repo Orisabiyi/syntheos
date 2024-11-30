@@ -94,8 +94,12 @@ export default function Analyzer() {
           </button>
         </form>
       )}
-      <div className="generated-content self-start">
-        {messages && <Markdown>{messages}</Markdown>}
+      <div className="generated-content self-start flex flex-col items-center gap-8 w-full py-12">
+        <div>{messages && <Markdown>{messages}</Markdown>}</div>
+
+        <button className="bg-lemon-dark w-1/2 self-center py-4 px-8 rounded-xl text-18 font-medium">
+          Save to history
+        </button>
       </div>
     </section>
   );
