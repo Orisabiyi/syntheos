@@ -19,7 +19,7 @@ export default function Analyze() {
           className="h-32 border-2 border-black w-80 rounded-lg text-20"
           onClick={handlePasteClick}
         >
-          Paste content
+          Analyze Post
         </button>
       </div>
     </div>
