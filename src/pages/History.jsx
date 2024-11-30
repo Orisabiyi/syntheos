@@ -5,16 +5,21 @@ import { handleGetHistory } from "../firebase/firestore";
 import chill from "../assets/chillguy.jpg";
 
 export default function History() {
+  const [isLoading, setIsLoading] = useState(false);
   const [value, setValue] = useState([]);
 
   useEffect(function () {
     async function handleAnalyze() {
       try {
+        setIsLoading(true);
+
         const res = await handleGetHistory();
         console.log(res);
         setValue(res);
       } catch (error) {
         console.log(error.message);
+      } finally {
+        setIsLoading(false);
       }
     }
     handleAnalyze();
@@ -22,7 +27,7 @@ export default function History() {
 
   return (
     <div className="min-h-screen w-full">
-      {value <= 0 ? (
+      {value.length <= 0 && !isLoading ? (
         <div className="h-screen w-full flex flex-col gap-10 justify-center items-center">
           <div className="h-80 w-80">
             <img src={chill} alt="" className="rounded-2xl" />
@@ -50,6 +55,15 @@ export default function History() {
               <ReactMarkdown>{item.content}</ReactMarkdown>
             </div>
           ))}
+        </div>
+      )}
+
+      {isLoading && (
+        <div className="h-screen w-full flex flex-col gap-10 justify-center items-center">
+          <div className="h-80 w-80">
+            <img src={chill} alt="" className="rounded-2xl" />
+          </div>
+          <h1 className="text-20 font-medium text-center">Loading...</h1>
         </div>
       )}
     </div>
