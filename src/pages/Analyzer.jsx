@@ -45,7 +45,11 @@ export default function Analyzer() {
   };
 
   return (
-    <section className="h-full flex flex-col items-center justify-center">
+    <section
+      className={`h-full flex flex-col items-center ${
+        messages ? "justify-start" : "justify-center"
+      }`}
+    >
       {!messages && (
         <form
           className="relative flex flex-col justify-center items-center gap-5 w-full"
@@ -72,7 +76,7 @@ export default function Analyzer() {
           </button>
         </form>
       )}
-      <div className="generated-content">
+      <div className="generated-content self-start">
         {messages && <Markdown>{messages}</Markdown>}
       </div>
     </section>
