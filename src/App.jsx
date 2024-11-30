@@ -12,6 +12,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Auth />} />
         <Route path="/dashboard" element={<Dashboard />}>
+          <Route index element={<Analyze />} />
           <Route path="analyze" element={<Analyze />} />
           <Route path="profile" element={<Profile />} />
           <Route path="history" element={<History />} />
