@@ -88,16 +88,15 @@ export default function Analyzer() {
 
   return (
     <section
-      className={`min-h-screen flex flex-col items-center ${
-        messages ? "justify-start" : "justify-center"
-      }`}
+      className={`min-h-screen flex flex-col items-center ${messages ? "justify-start" : "justify-center"
+        }`}
     >
       {!messages && (
         <form
           className="relative flex flex-col justify-center items-center gap-4 w-full"
           onSubmit={handleAnalyze}
         >
-          <h3 className="font-medium text-32 text-center">
+          <h3 className="font-medium text-32 text-center max-lg:text-24">
             Analyze Post Content
           </h3>
 
@@ -109,7 +108,7 @@ export default function Analyzer() {
             placeholder={placeholder}
             value={userInput}
             onChange={handleChange}
-            className="h-96 w-3/4 mx-auto text-18 p-3 border-2 border-lemon-dark rounded-xl resize-none outline-none"
+            className="h-96 w-3/4 max-md:w-10/12 mx-auto text-18 p-3 border-2 border-lemon-dark rounded-xl resize-none outline-none"
           />
           <button
             className="bg-lemon-dark text-black text-18 font-medium rounded-md flex items-center justify-center gap-4 px-16 py-4"
@@ -121,7 +120,7 @@ export default function Analyzer() {
         </form>
       )}
       {messages && (
-        <div className="self-start flex flex-col items-center gap-5 w-11/12 py-10 mx-auto">
+        <div className="self-start flex flex-col items-center gap-10 w-11/12 py-10 mx-auto">
           <div className="w-60 h-60">
             <img src={chillguy} alt="" className="rounded-2xl" />
           </div>
@@ -131,7 +130,7 @@ export default function Analyzer() {
 
           {!isSave && (
             <button
-              className="bg-lemon-dark w-1/4 self-center py-4 px-8 rounded-xl text-18 font-medium"
+              className="bg-lemon-dark w-1/4 max-lg:w-1/2 self-center py-4 px-8 rounded-xl text-18 font-medium"
               onClick={handleSave}
             >
               {isLoading ? "Saving..." : "Save to history"}

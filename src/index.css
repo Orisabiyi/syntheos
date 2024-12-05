@@ -5,7 +5,8 @@
 @tailwind utilities;
 
 html {
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 62.5%;
+  /* 1rem = 10px */
 }
 
 .generated-content {
@@ -18,12 +19,19 @@ html {
   font-weight: 700;
 }
 
-.generated-content > h2 {
+.generated-content>h2 {
   font-size: 18px;
   font-weight: 500;
 }
 
-.generated-content > ul {
+@media screen and (min-width: 600px) {
+  .generated-content>h2 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.generated-content>ul {
   font-weight: 500;
   padding: 2rem;
   display: flex;
@@ -31,7 +39,17 @@ html {
   gap: 0.5rem;
 }
 
-.generated-content > ul > li {
+@media screen and (max-width: 600px) {
+  .generated-content>ul {
+    font-weight: 500;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.generated-content>ul>li {
   background-color: #d3e6b5;
   padding: 10px 10px;
   border-radius: 10px;
@@ -39,8 +57,7 @@ html {
   font-weight: 500;
 }
 
-.generated-content > p {
-  /* background-color: #d3e6b5; */
+.generated-content>p {
   padding: 4px;
   margin-right: 10px;
   border-radius: 10px;

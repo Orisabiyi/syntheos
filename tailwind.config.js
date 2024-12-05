@@ -23,6 +23,9 @@ export default {
           dark: "#d3e6b5",
         },
       },
+      width: {
+        95: "97%"
+      }
     },
   },
   plugins: [],
