@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Auth from "./pages/Auth";
+import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Analyze from "./pages/Analyze";
 import Profile from "./pages/Profile";
@@ -10,7 +10,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Auth />} />
+        <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<Analyze />} />
           <Route path="analyze" element={<Analyze />} />

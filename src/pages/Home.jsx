@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { handleGoogleAuth } from "../firebase/GoogleAuth";
 import { handleTwitterAuth } from "../firebase/TwitterAuth";
 
-export default function Auth() {
+export default function Home() {
   const navigate = useNavigate();
 
   const handleAuth = async function () {
