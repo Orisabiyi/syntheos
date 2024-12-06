@@ -29,15 +29,15 @@ export default function History() {
     <div className="min-h-screen w-full">
       {value.length <= 0 && !isLoading ? (
         <div className="h-screen w-full flex flex-col gap-10 justify-center items-center">
-          <div className="h-80 w-80">
+          <div className="h-80 w-80 max-md:w-60 max-md:h-60">
             <img src={chill} alt="" className="rounded-2xl" />
           </div>
-          <h1 className="text-20 font-medium text-center">
+          <h1 className="text-20 font-medium text-center max-lg:text-16">
             Just take a chill pill and analyze a post
           </h1>
           <Link
             to={"/dashboard/analyze"}
-            className="text-18 font-medium bg-lemon-dark p-5 rounded-2xl"
+            className="text-18 max-lg:text-16 font-medium bg-lemon-dark p-5 rounded-2xl"
           >
             Analyze a post
           </Link>
