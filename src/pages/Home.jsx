@@ -4,6 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { handleGoogleAuth } from "../firebase/GoogleAuth";
 import { handleTwitterAuth } from "../firebase/TwitterAuth";
 import social from "../assets/social.jpeg";
+import { features } from "../utils/features";
+import { FiMaximize2, FiTarget } from "react-icons/fi";
+import { BiHash, BiLayout, BiLineChart } from "react-icons/bi";
+import { MdDevices, MdHistory } from "react-icons/md";
+import { AiOutlineAim } from "react-icons/ai";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -92,6 +97,49 @@ export default function Home() {
       <section>
         <h2>Why Choose Opra</h2>
         <h4>Unlock the Power of AI to Enhance Your Social Media Strategy</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="p-6 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all duration-300 ease-in-out"
+            >
+              <div className="flex flex-col items-center text-center">
+                {feature.title === "Engagement Metrics" && (
+                  <BiLineChart className="text-4xl text-primary" />
+                )}
+                {feature.title === "Suggested Improvements" && (
+                  <FiTarget className="text-4xl text-primary" />
+                )}
+                {feature.title === "Hashtag Recommendations" && (
+                  <BiHash className="text-4xl text-primary" />
+                )}
+                {feature.title === "Post Format Suggestions" && (
+                  <BiLayout className="text-4xl text-primary" />
+                )}
+                {feature.title === "Historical Analysis" && (
+                  <MdHistory className="text-4xl text-primary" />
+                )}
+                {feature.title === "Multi-Platform Support" && (
+                  <MdDevices className="text-4xl text-primary" />
+                )}
+                {feature.title === "Precision Targeting" && (
+                  <AiOutlineAim className="text-4xl text-primary" />
+                )}
+                {feature.title === "Goal Tracking" && (
+                  <FiTarget className="text-4xl text-primary" />
+                )}
+                {feature.title === "Performance Scaling" && (
+                  <FiMaximize2 className="text-4xl text-primary" />
+                )}
+
+                <h3 className="text-xl font-semibold mt-4 mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-400">{feature.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </main>
   );
