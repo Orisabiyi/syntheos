@@ -3,6 +3,7 @@ import { RiTwitterXFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import { handleGoogleAuth } from "../firebase/GoogleAuth";
 import { handleTwitterAuth } from "../firebase/TwitterAuth";
+import social from "../assets/social.jpeg";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ export default function Home() {
         <h1 className="text-32 font-semibold">OPRA</h1>
       </nav>
 
-      <header className="flex items-center justify-between h-[90vh] px-16">
+      <header className="flex items-center justify-between h-[90vh] px-16 gap-20">
         <div className="w-1/2 flex flex-col gap-10">
           <h2 className="text-60 leading-tight font-semibold">
             <span className="hover:bg-white hover:px-3 hover:rotate-90 rounded-lg cursor-pointer transition-all duration-200 delay-100">
@@ -59,7 +60,7 @@ export default function Home() {
             Analyzer
           </p>
 
-          <button className="self-start p-6 w-80 bg-white rounded-lg text-20 font-medium">
+          <button className="self-start bg-white rounded-lg font-medium p-6 w-80 text-20 transition-all duration-500 hover:bg-gray-100">
             Get Started
           </button>
 
@@ -83,7 +84,9 @@ export default function Home() {
           </ul> */}
         </div>
 
-        <div></div>
+        <figure className="flex-1">
+          <img src={social} alt="social-img" className="rounded-xl" />
+        </figure>
       </header>
     </main>
   );
