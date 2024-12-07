@@ -88,6 +88,11 @@ export default function Home() {
           <img src={social} alt="social-img" className="rounded-xl" />
         </figure>
       </header>
+
+      <section>
+        <h2>Why Choose Opra</h2>
+        <h4>Unlock the Power of AI to Enhance Your Social Media Strategy</h4>
+      </section>
     </main>
   );
 }
