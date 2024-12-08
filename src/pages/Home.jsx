@@ -44,7 +44,7 @@ export default function Home() {
         <h1 className="text-32 font-semibold">OPRA</h1>
       </nav>
 
-      <header className="flex items-center justify-between h-[90vh] px-16 gap-20">
+      <header className="flex items-center justify-between h-[90vh] p-16 gap-20">
         <div className="w-1/2 flex flex-col gap-10">
           <h2 className="text-60 leading-tight font-semibold">
             <span className="hover:bg-white hover:px-3 hover:rotate-90 rounded-lg cursor-pointer transition-all duration-200 delay-100">
@@ -94,52 +94,53 @@ export default function Home() {
         </figure>
       </header>
 
-      <section>
-        <h2>Why Choose Opra</h2>
-        <h4>Unlock the Power of AI to Enhance Your Social Media Strategy</h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="p-6 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all duration-300 ease-in-out"
-            >
-              <div className="flex flex-col items-center text-center">
-                {feature.title === "Engagement Metrics" && (
-                  <BiLineChart className="text-4xl text-primary" />
-                )}
-                {feature.title === "Suggested Improvements" && (
-                  <FiTarget className="text-4xl text-primary" />
-                )}
-                {feature.title === "Hashtag Recommendations" && (
-                  <BiHash className="text-4xl text-primary" />
-                )}
-                {feature.title === "Post Format Suggestions" && (
-                  <BiLayout className="text-4xl text-primary" />
-                )}
-                {feature.title === "Historical Analysis" && (
-                  <MdHistory className="text-4xl text-primary" />
-                )}
-                {feature.title === "Multi-Platform Support" && (
-                  <MdDevices className="text-4xl text-primary" />
-                )}
-                {feature.title === "Precision Targeting" && (
-                  <AiOutlineAim className="text-4xl text-primary" />
-                )}
-                {feature.title === "Goal Tracking" && (
-                  <FiTarget className="text-4xl text-primary" />
-                )}
-                {feature.title === "Performance Scaling" && (
-                  <FiMaximize2 className="text-4xl text-primary" />
-                )}
+      <section className="flex flex-col items-center gap-10 p-24">
+        <h2 className="text-36 font-semibold leading-none">Why Choose Opra</h2>
+        <h4 className="text-24 font-medium mb-8 leading-none">
+          Unlock the Power of AI to Enhance Your Social Media Strategy
+        </h4>
 
-                <h3 className="text-xl font-semibold mt-4 mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-400">{feature.description}</p>
-              </div>
-            </div>
+        <ul className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {features.map((feature, index) => (
+            <li
+              key={index}
+              className="p-10 rounded-lg border-gray-400 border-2 hover:border-gray-500 hover:rounded-2xl flex flex-col items-center justify-center gap-4 transition-all duration-1000 ease-in-out cursor-pointer"
+            >
+              {feature.title === "Engagement Metrics" && (
+                <BiLineChart size={70} className="text-gray-700" />
+              )}
+              {feature.title === "Suggested Improvements" && (
+                <FiTarget size={45} className="text-gray-700" />
+              )}
+              {feature.title === "Hashtag Recommendations" && (
+                <BiHash size={45} className="text-gray-700" />
+              )}
+              {feature.title === "Post Format Suggestions" && (
+                <BiLayout size={45} className="text-gray-700" />
+              )}
+              {feature.title === "Historical Analysis" && (
+                <MdHistory size={45} className="text-gray-700" />
+              )}
+              {feature.title === "Multi-Platform Support" && (
+                <MdDevices size={45} className="text-gray-700" />
+              )}
+              {feature.title === "Precision Targeting" && (
+                <AiOutlineAim size={45} className="text-gray-700" />
+              )}
+              {feature.title === "Goal Tracking" && <FiTarget size={45} />}
+              {feature.title === "Performance Scaling" && (
+                <FiMaximize2 size={45} className="text-gray-700" />
+              )}
+
+              <h3 className="text-20 text-gray-900 font-semibold leading-none">
+                {feature.title}
+              </h3>
+              <p className="text-16 text-gray-900 font-medium text-center leading-none">
+                {feature.description}
+              </p>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
     </main>
   );
