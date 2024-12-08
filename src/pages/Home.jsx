@@ -107,29 +107,29 @@ export default function Home() {
               className="p-10 rounded-lg border-gray-400 border-2 hover:border-gray-500 hover:rounded-2xl flex flex-col items-center justify-center gap-4 transition-all duration-1000 ease-in-out cursor-pointer"
             >
               {feature.title === "Engagement Metrics" && (
-                <BiLineChart size={70} className="text-gray-700" />
+                <BiLineChart size={70} className="text-gray-600" />
               )}
               {feature.title === "Suggested Improvements" && (
-                <FiTarget size={45} className="text-gray-700" />
+                <FiTarget size={70} className="text-gray-600" />
               )}
               {feature.title === "Hashtag Recommendations" && (
-                <BiHash size={45} className="text-gray-700" />
+                <BiHash size={70} className="text-gray-600" />
               )}
               {feature.title === "Post Format Suggestions" && (
-                <BiLayout size={45} className="text-gray-700" />
+                <BiLayout size={70} className="text-gray-600" />
               )}
               {feature.title === "Historical Analysis" && (
-                <MdHistory size={45} className="text-gray-700" />
+                <MdHistory size={70} className="text-gray-600" />
               )}
               {feature.title === "Multi-Platform Support" && (
-                <MdDevices size={45} className="text-gray-700" />
+                <MdDevices size={70} className="text-gray-600" />
               )}
               {feature.title === "Precision Targeting" && (
-                <AiOutlineAim size={45} className="text-gray-700" />
+                <AiOutlineAim size={70} className="text-gray-600" />
               )}
-              {feature.title === "Goal Tracking" && <FiTarget size={45} />}
+              {feature.title === "Goal Tracking" && <FiTarget size={70} />}
               {feature.title === "Performance Scaling" && (
-                <FiMaximize2 size={45} className="text-gray-700" />
+                <FiMaximize2 size={70} className="text-gray-600" />
               )}
 
               <h3 className="text-20 text-gray-900 font-semibold leading-none">
