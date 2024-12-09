@@ -144,7 +144,7 @@ export default function Home() {
       </section>
 
       <section className="flex flex-col items-center gap-10 p-32 bg-gradient-to-b from-gray-100 to-gray-300">
-        <h2 className="text-36 font-semibold leading-none">How Opra Works</h2>
+        <h2 className="text-32 font-semibold leading-none">How Opra Works</h2>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 w-full mt-8">
           <li className="flex flex-col items-center justify-center gap-4 text-center">
@@ -185,6 +185,83 @@ export default function Home() {
             </h3>
             <p className="text-center text-16 text-gray-600">
               Store your analyzed content for future reference
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section className="bg-gradient-to-b from-gray-300 to-gray-100 flex flex-col items-center gap-10 p-32">
+        <h2 className="text-32 font-semibold leading-none">FAQS</h2>
+
+        <ul>
+          <li>
+            <h4>How does Opra AI Post Analyzer work?</h4>
+            <p>
+              Opra&apos;s post analyzer uses advanced AI algorithms to analyze
+              your social media content. Simply enter your post text or fetch it
+              directly from your connected social media accounts. The analyzer
+              then provides detailed insights, including engagement metrics,
+              suggested improvements, hashtag recommendations, and post format
+              suggestions. This helps you optimize your content for maximum
+              reach and engagement.
+            </p>
+          </li>
+
+          <li>
+            <h4>What Platforms are supported?</h4>
+            <p>
+              Opra currently supports Twitter and is actively working on
+              expanding support to other major social media platforms, including
+              Instagram, Facebook, LinkedIn, and more. Our goal is to provide a
+              comprehensive tool that helps you optimize your content across all
+              your social media channels.
+            </p>
+          </li>
+
+          <li>
+            <h4>How Accurate are the engagement metrics?</h4>
+            <p>
+              Our engagement predictions are based on sophisticated machine
+              learning models that analyze a wide range of data points,
+              including historical performance, current trends, and audience
+              behavior. While no prediction can be 100% accurate, our models are
+              continuously refined to provide the most reliable insights
+              possible. Many of our users have reported significant increases in
+              engagement after using our suggestions.
+            </p>
+          </li>
+
+          <li>
+            <h4>Is my data secure?</h4>
+            <p>
+              Absolutely. Your data security is our top priority. We use
+              industry-standard encryption and secure servers to protect your
+              information. Additionally, we comply with all relevant data
+              protection regulations to ensure your data is handled responsibly
+              and securely
+            </p>
+          </li>
+
+          <li>
+            <h4>How do I get started with Opra?</h4>
+            <p>
+              Getting started with Opra is easy. Simply sign up with your email
+              and password. Once you&apos;re logged in, you can start analyzing
+              your posts immediately. Enter your post content or connect your
+              social media accounts to fetch posts directly. Our user-friendly
+              dashboard will guide you through the process.
+            </p>
+          </li>
+
+          <li>
+            <h4>How does Opra help improve my social media strategy?</h4>
+            <p>
+              Opra provides actionable insights and recommendations based on AI
+              analysis of your content. By understanding what works best for
+              your audience, you can create more engaging posts, increase your
+              reach, and drive more traffic to your pages. Our detailed
+              analytics and historical performance tracking help you refine your
+              strategy over time.
             </p>
           </li>
         </ul>
