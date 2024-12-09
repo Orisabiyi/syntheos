@@ -1,15 +1,11 @@
 import social from "../assets/social.jpeg";
-import { features } from "../utils/features";
-import { AiOutlineAim } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
-import { MdDevices, MdHistory } from "react-icons/md";
-import { FiMaximize2, FiTarget } from "react-icons/fi";
+import { Link, useNavigate } from "react-router-dom";
 import { handleGoogleAuth } from "../firebase/GoogleAuth";
 import { handleTwitterAuth } from "../firebase/TwitterAuth";
-import { BiHash, BiLayout, BiLineChart } from "react-icons/bi";
 
 import Faqs from "../components/Faqs";
 import OpraWork from "../components/OpraWork";
+import ChooseOpra from "../components/ChooseOpra";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -41,8 +37,18 @@ export default function Home() {
 
   return (
     <main className="bg-gray-100">
-      <nav className="px-16 py-8">
+      <nav className="px-16 py-8 flex items-center justify-between">
         <h1 className="text-32 font-semibold">OPRA</h1>
+
+        <ul className="flex gap-10 text-16 font-medium">
+          <li>
+            <Link to="#why-choose-opra">Why Choose Opra</Link>
+          </li>
+          <li>How Opra Works</li>
+          <li>FAQS</li>
+        </ul>
+
+        <button>Get Started</button>
       </nav>
 
       <header className="flex items-center justify-between h-[90vh] p-16 gap-20 bg-gradient-to-b from-gray-100 to-gray-300">
@@ -94,6 +100,8 @@ export default function Home() {
           <img src={social} alt="social-img" className="rounded-xl" />
         </figure>
       </header>
+
+      <ChooseOpra />
 
       <OpraWork />
 
