@@ -6,7 +6,10 @@ import { AiOutlineAim } from "react-icons/ai";
 
 export default function ChooseOpra() {
   return (
-    <section className="flex flex-col items-center gap-10 p-24 bg-gradient-to-b from-gray-300 to-gray-100">
+    <section
+      id="why-choose-opra"
+      className="flex flex-col items-center gap-10 p-24 bg-gradient-to-b from-gray-300 to-gray-100"
+    >
       <h2 className="text-36 font-semibold leading-none">Why Choose Opra</h2>
       <h4 className="text-24 font-medium mb-8 leading-none">
         Unlock the Power of AI to Enhance Your Social Media Strategy

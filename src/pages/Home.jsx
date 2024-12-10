@@ -1,5 +1,5 @@
 import social from "../assets/social.jpeg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { handleGoogleAuth } from "../firebase/GoogleAuth";
 import { handleTwitterAuth } from "../firebase/TwitterAuth";
 
@@ -42,7 +42,7 @@ export default function Home() {
 
         <ul className="flex gap-10 text-16 font-medium">
           <li>
-            <Link to="#why-choose-opra">Why Choose Opra</Link>
+            <NavLink to="/#why-choose-opra">Why Choose Opra</NavLink>
           </li>
           <li>How Opra Works</li>
           <li>FAQS</li>
