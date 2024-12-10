@@ -14,7 +14,10 @@ export default function Faqs() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-gray-300 to-gray-100 flex flex-col items-center gap-10 p-32">
+    <section
+      id="faqs"
+      className="bg-gradient-to-b from-gray-300 to-gray-100 flex flex-col items-center gap-10 p-32"
+    >
       <h2 className="text-32 font-semibold leading-none">FAQS</h2>
 
       <ul className="flex flex-col w-full gap-10">
