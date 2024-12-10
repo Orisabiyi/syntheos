@@ -3,8 +3,15 @@ import { faqs } from "../utils/features";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 export default function Faqs() {
-  const [faqsOpen, setFaqsOpen] = useState({ type: false, index: 0 });
+  const [faqsOpen, setFaqsOpen] = useState({ type: false, index: null });
 
+  const handleFaqs = function (index) {
+    setFaqsOpen((faq) => ({
+      ...faq,
+      type: index !== faq.index ? true : false,
+      index,
+    }));
+  };
 
   return (
     <section className="bg-gradient-to-b from-gray-300 to-gray-100 flex flex-col items-center gap-10 p-32">
@@ -12,10 +19,7 @@ export default function Faqs() {
 
       <ul className="flex flex-col w-full gap-10">
         {faqs.map((faq, index) => (
-          <li
-            key={index}
-            onClick={() => setFaqsOpen({ type: !faqsOpen.type, index })}
-          >
+          <li key={index} onClick={() => handleFaqs(index)}>
             <h4 className="w-full bg-gray-100 p-10 rounded-lg text-20 font-medium flex items-center justify-between cursor-pointer">
               <span>{faq.question}</span>
               <MdOutlineKeyboardArrowDown
