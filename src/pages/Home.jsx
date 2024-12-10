@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import Faqs from "../components/Faqs";
 import OpraWork from "../components/OpraWork";
 import ChooseOpra from "../components/ChooseOpra";
+import Header from "../components/Header";
 
 export default function Home() {
   // const navigate = useNavigate();
@@ -47,6 +48,8 @@ export default function Home() {
 
         <button>Get Started</button>
       </nav>
+
+      <Header />
 
       <ChooseOpra />
 
