@@ -1,4 +1,5 @@
 import social from "../assets/social.jpeg";
+import Button from "./Button";
 
 export default function Header() {
   return (
@@ -23,9 +24,7 @@ export default function Header() {
           Analyzer
         </p>
 
-        <button className="self-start bg-white rounded-lg font-medium p-6 w-80 text-20 transition-all duration-500 hover:bg-gray-100">
-          Get Started
-        </button>
+        <Button />
 
         {/* <ul className="flex gap-10">
             <li>

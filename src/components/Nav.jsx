@@ -1,4 +1,5 @@
 import { HashLink } from "react-router-hash-link";
+import Button from "./Button";
 
 export default function Nav() {
   return (
@@ -23,9 +24,7 @@ export default function Nav() {
         </li>
       </ul>
 
-      <button className="bg-white rounded-lg py-4 px-12 text-16 transition-all duration-500 hover:bg-gray-200">
-        Get Started
-      </button>
+      <Button />
     </nav>
   );
 }
