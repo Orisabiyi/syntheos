@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 import Faqs from "../components/Faqs";
 import OpraWork from "../components/OpraWork";
@@ -40,10 +40,20 @@ export default function Home() {
 
         <ul className="flex gap-10 text-16 font-medium">
           <li>
-            <NavLink to="/#why-choose-opra">Why Choose Opra</NavLink>
+            <HashLink smooth to="#why-choose-opra">
+              Why Choose Opra
+            </HashLink>
           </li>
-          <li>How Opra Works</li>
-          <li>FAQS</li>
+          <li>
+            <HashLink smooth to="#how-opra-works">
+              How Opra Works
+            </HashLink>
+          </li>
+          <li>
+            <HashLink smooth to="#faqs">
+              FAQS
+            </HashLink>
+          </li>
         </ul>
 
         <button>Get Started</button>
