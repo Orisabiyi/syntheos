@@ -16,6 +16,7 @@ export default {
         36: "3.6rem",
         38: "3.8rem",
         40: "4.0rem",
+        50: "5rem",
         60: "6.0rem",
       },
       colors: {

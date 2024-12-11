@@ -5,10 +5,10 @@ export default function Header() {
   return (
     <header
       id="Home"
-      className="flex items-center justify-between h-[90vh] p-16 gap-20 bg-gradient-to-b from-gray-100 to-gray-300"
+      className="flex flex-col lg:flex-row items-center justify-between min-h-[90vh] p-8 lg:p-16 gap-20 bg-gradient-to-b from-gray-100 to-gray-300"
     >
-      <div className="w-1/2 flex flex-col gap-10">
-        <h2 className="text-60 leading-tight font-semibold">
+      <div className="lg:w-1/2 flex flex-col gap-10">
+        <h2 className="text-24 sm:text-50 lg:text-60 leading-tight font-semibold">
           <span className="hover:bg-white hover:px-3 hover:rotate-90 rounded-lg cursor-pointer transition-all duration-200 delay-100">
             Optimize
           </span>{" "}
@@ -22,7 +22,7 @@ export default function Header() {
           </span>
         </h2>
 
-        <p className="text-32 font-medium">
+        <p className="text-20 md:text-32 font-medium">
           Analyze, Improve, and Drive Traffic with Opra&apos;s AI-Powered Post
           Analyzer
         </p>
