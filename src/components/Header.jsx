@@ -27,7 +27,7 @@ export default function Header() {
           Analyzer
         </p>
 
-        <Button />
+        <Button classProp="self-start text-18 md:text-20" />
 
         {/* <ul className="flex gap-10">
             <li>
