@@ -8,10 +8,12 @@ export default function ChooseOpra() {
   return (
     <section
       id="why-choose-opra"
-      className="flex flex-col items-center gap-10 p-24 bg-gradient-to-b from-gray-300 to-gray-100"
+      className="flex flex-col items-center gap-10 p-8 lg:p-24 bg-gradient-to-b from-gray-300 to-gray-100"
     >
-      <h2 className="text-36 font-semibold leading-none">Why Choose Opra</h2>
-      <h4 className="text-24 font-medium mb-8 leading-none">
+      <h2 className="text-20 sm:text-22 lg:text-36 font-semibold leading-none">
+        Why Choose Opra
+      </h2>
+      <h4 className="text-16 sm:text-18 text-center lg:text-24 font-medium mb-8 leading-none">
         Unlock the Power of AI to Enhance Your Social Media Strategy
       </h4>
 
@@ -19,7 +21,7 @@ export default function ChooseOpra() {
         {features.map((feature, index) => (
           <li
             key={index}
-            className="p-10 rounded-lg border-gray-400 border-2 hover:border-gray-500 hover:rounded-2xl flex flex-col items-center justify-center gap-4 transition-all duration-1000 ease-in-out cursor-pointer"
+            className="p-10 rounded-lg border-gray-400 border-2 hover:border-gray-500 hover:rounded-2xl flex flex-col items-center justify-center gap-4 text-center transition-all duration-1000 ease-in-out cursor-pointer"
           >
             {feature.title === "Engagement Metrics" && (
               <BiLineChart size={70} className="text-gray-600" />
