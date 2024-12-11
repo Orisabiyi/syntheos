@@ -33,7 +33,7 @@ export default function Footer() {
 
       <p>&copy; 2024 Opra. All rights reserved.</p>
 
-      <ul className="flex items-center gap-10">
+      <ul className="flex items-center gap-16">
         <li>Privacy Policy</li>
         <li>Terms of Service</li>
         <li>Cookie Policy</li>
