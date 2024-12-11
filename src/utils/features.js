@@ -66,6 +66,6 @@ export const faqs = [
   {
     question: "How does Opra help improve my social media strategy?",
     answer:
-      "Opra provides actionable insights and recommendations based on AI analysis of your content. By understanding what works best for your audience, you can create more engaging posts, increase your reach, and drive more traffic to your pages. Our detailed analytics and historical performance tracking help you refine your strategy over time.",
+      "Opra provides actionable insights and recommendations based on our AI analysis of your content. By understanding what works best for your audience, you can create more engaging posts, increase your reach, and drive more traffic to your pages. Our detailed analytics and historical performance tracking help you refine your strategy over time.",
   },
 ];

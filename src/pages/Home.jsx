@@ -3,6 +3,7 @@ import OpraWork from "../components/OpraWork";
 import ChooseOpra from "../components/ChooseOpra";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 export default function Home() {
   // const navigate = useNavigate();
@@ -33,16 +34,20 @@ export default function Home() {
   // };
 
   return (
-    <main className="bg-gray-100">
-      <Nav />
+    <>
+      <main className="bg-gray-100">
+        <Nav />
 
-      <Header />
+        <Header />
 
-      <ChooseOpra />
+        <ChooseOpra />
 
-      <OpraWork />
+        <OpraWork />
 
-      <Faqs />
-    </main>
+        <Faqs />
+      </main>
+
+      <Footer />
+    </>
   );
 }
