@@ -9,21 +9,23 @@ export default function Faqs() {
     setFaqsOpen((faq) => ({
       ...faq,
       type: index !== faq.index ? true : false,
-      index,
+      index: faq.type ? null : index,
     }));
   };
 
   return (
     <section
       id="faqs"
-      className="bg-gradient-to-b from-gray-300 to-gray-100 flex flex-col items-center gap-10 p-32"
+      className="bg-gradient-to-b from-gray-300 to-gray-100 flex flex-col items-center gap-10 p-8 lg:p-16"
     >
-      <h2 className="text-32 font-semibold leading-none">FAQS</h2>
+      <h2 className="text-20 sm:text-22 lg:text-32 font-semibold leading-none">
+        FAQS
+      </h2>
 
       <ul className="flex flex-col w-full gap-10">
         {faqs.map((faq, index) => (
           <li key={index} onClick={() => handleFaqs(index)}>
-            <h4 className="w-full bg-gray-100 p-10 rounded-lg text-20 font-medium flex items-center justify-between cursor-pointer">
+            <h4 className="w-full bg-gray-100 p-5 lg:p-10 rounded-lg text-14 sm:text-16 lg:text-20 font-medium flex items-center justify-between cursor-pointer">
               <span>{faq.question}</span>
               <MdOutlineKeyboardArrowDown
                 size={24}

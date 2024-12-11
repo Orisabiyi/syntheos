@@ -8,7 +8,7 @@ export default function ChooseOpra() {
   return (
     <section
       id="why-choose-opra"
-      className="flex flex-col items-center gap-10 p-8 lg:p-24 bg-gradient-to-b from-gray-300 to-gray-100"
+      className="flex flex-col items-center gap-10 p-8 lg:p-16 bg-gradient-to-b from-gray-300 to-gray-100"
     >
       <h2 className="text-20 sm:text-22 lg:text-36 font-semibold leading-none">
         Why Choose Opra
