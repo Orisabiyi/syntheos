@@ -10,7 +10,9 @@ export default function Footer() {
 
       <ul className="grid grid-cols-2">
         <li>
-          <HashLink>Home</HashLink>
+          <HashLink smooth to="#home">
+            Home
+          </HashLink>
         </li>
         <li>
           <HashLink smooth to="#why-choose-opra">

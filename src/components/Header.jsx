@@ -3,7 +3,10 @@ import Button from "./Button";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between h-[90vh] p-16 gap-20 bg-gradient-to-b from-gray-100 to-gray-300">
+    <header
+      id="Home"
+      className="flex items-center justify-between h-[90vh] p-16 gap-20 bg-gradient-to-b from-gray-100 to-gray-300"
+    >
       <div className="w-1/2 flex flex-col gap-10">
         <h2 className="text-60 leading-tight font-semibold">
           <span className="hover:bg-white hover:px-3 hover:rotate-90 rounded-lg cursor-pointer transition-all duration-200 delay-100">
